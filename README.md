@@ -4,10 +4,14 @@
 1. docker compose up -d --build
 2. docker compose exec php bash
 3. composer install
-4. env.exampleファイルから.envを作成し、環境変数を変更
-5. php artisan key:generete
-6. php artisan migrate
-7. php artisan db:seed
+4. cp .env.example .env
+5. php artisan make:controller
+6. php artisan key:generete
+7. php artisan make:model
+8. php artisan make:migration
+9. php artisan migrate
+10. php artisan make:seeder
+11. php artisan db:seed
 
 ## 使用技術
 - PHP 7.4.9
