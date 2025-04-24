@@ -1,0 +1,255 @@
+.products-heading {
+    width: 100%;
+    height: 50px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.products-title,
+.product-form__input::placeholder,
+.search-button,
+.select-title {
+    font-family: 'Hiragino Kaku Gothic Pro';
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.products-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.products-add {
+    width: 137px;
+    border-radius: 5px;
+    padding: 13px 20px;
+    gap: 10px;
+    background-color: #FFA929;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+}
+
+.products-details {
+    width: 1512px;
+    height: 790px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0 40px;
+
+}
+
+.products-search {
+    width: 240px;
+    height: 328px;
+    margin-top: 40px;
+}
+
+.search-form {
+    width: 100%;
+    height: 114px;
+}
+
+.search-form__input {
+    width: 240px;
+    height: 50px;
+    border: 1px solid #E0DFDE;
+    border-radius: 25px;
+    padding: 14.5px 10px;
+    gap: 10px;
+    background-color: #ffffff;
+}
+
+.product-form__input::placeholder {
+    width: 84px;
+    height: 21px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #E0DFDE;
+}
+
+.search-button {
+    width: 240px;
+    height: 44px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #F5C800;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+
+    font-weight: 600;
+    font-size: 16px;
+    color: #4B4B4B;
+}
+
+.search-select {
+    width: 240px;
+    height: 174px;
+    border-bottom: 1px solid #E0DFDE;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.select-title {
+    width: 120px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+}
+
+.select-form {
+    width: 240px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #E0DFDE;
+    margin: 10px 0px 20px 0px;
+    padding: 11px 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    color: #E0DFDE;
+}
+
+.select-form::after {
+    content: "▼";
+    color: #BEB1A6;
+    pointer-events: none;
+
+}
+
+.select-list {
+    width: 240px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.tag {
+    width: 130px;
+    height: 41px;
+    border: 1px solid #F5C800;
+    border-radius: 21px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+
+.products-fruits {
+    max-width: 1162px;
+    height: 790px;
+    flex: 3;
+    margin-top: 20px;
+}
+
+.fruits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1162px;
+    justify-content: space-between;
+}
+
+.fruits-item {
+    width: calc(33.33% - 20px);
+    height: 350px;
+    box-shadow: 0px 0px 10px 0px #0000001A;
+    margin-bottom: 20px;
+}
+
+.item-img {
+    width: 374px;
+    height: 281px;
+}
+
+.item-title {
+    width: 374px;
+    height: 69px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.item-name,
+.item-price {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4B4B4B;
+
+}
+
+.item-name {
+    float: left;
+}
+
+.item-price {
+    float: right;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 8px 0px 8px;
+}
+
+
+.pagination a,
+.pagination span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
+.pagination span.disabled {
+    color: #4B4B4B;
+    border-color: #E0DFDE;
+    background-color: #E0DFDE;
+    cursor: default;
+}
+
+.pagination span.active {
+    background-color: #F5C800;
+    color: #fff;
+    border-color: #F5C800;
+    margin-right: 20px;
+}
+
+.pagination a[rel="prev"],
+.pagination a[rel="next"],
+.pagination span.disabled:first-child,
+.pagination span.disabled:last-child {
+    font-size: 1.2em;
+    border-radius: 50%;
+    min-width: auto;
+    height: auto;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.pagination a[rel="prev"]:hover,
+.pagination a[rel="next"]:hover {
+    border-color: #007bff;
+}
+
+.pagination span.disabled:first-child,
+.pagination span.disabled:last-child {
+    color: #999;
+    border-color: #eee;
+    background-color: #eee;
+}

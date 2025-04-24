@@ -1,0 +1,195 @@
+.create-content {
+    max-width: 1512px;
+    height: 930px;
+    padding: 70px 376px;
+    background-color: #F8F8F8;
+}
+
+.create-title, form-name, label>*:not(span), input::placeholder, .checkbox-label, textarea::placeholder, .cancel-button,
+.submit-button, .error-message {
+    font-family: 'Hiragino Kaku Gothic Pro';
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.create-title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #333333;
+}
+
+.create-form {
+    max-width: 760px;
+    margin-top: 30px;
+}
+
+.form-group {
+    width: 100%;
+    margin: 30px 0;
+}
+
+label {
+    display: flex;
+    height: 24px;
+    margin-bottom: 10px;
+
+    font-weight: 300;
+    font-size: 16px;
+    color: #4B4B4B;
+}
+
+.required {
+    width: 34px;
+    height: 18px;
+    padding: 0 5px;
+    margin: 5px 10px;
+    background-color: #FD0707;
+
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.input-text {
+    width: 760px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #E0DFDE;
+    padding: 11px 10px;
+    background-color: #FFFFFF;
+}
+
+.input-text::placeholder {
+    font-weight: 300;
+    font-size: 14px;
+    color: #E0DFDE;
+}
+
+.form-group__img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.select-multiple {
+    color: #FD0707;
+}
+
+.checkbox-group {
+    width: 314px;
+    height: 43px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-button {
+    width: 41px;
+    height: 34px;
+    padding: 5px 0;
+}
+
+.checkbox-input {
+    opacity: 0;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.checkbox-label {
+    font-size: 16px;
+    color: #4B4B4B;
+    font-weight: 300;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    /* 丸い形状にする */
+    background-color: #fff;
+    margin-right: 5px;
+    position: relative;
+    /* チェックマーク の配置基準にする */
+}
+
+.checkbox-input:checked+.checkbox-label .custom-checkbox::before {
+    content: "\2713";
+    /* Unicode のチェックマーク */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    background-color: #4B4B4B;
+    color: #FFFFFF;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+
+textarea {
+    width: 760px;
+    height: 160px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 11px 10px;
+    background-color: #FFFFFF;
+}
+
+textarea::placeholder {
+    font-weight: 300;
+    font-size: 14px;
+    color: #E0DFDE;
+}
+
+.form-group__explanation {
+    height: 256px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.cancel-button, .submit-button {
+    width: 200px;
+    border-radius: 5px;
+    padding: 13px 10px;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4B4B4B;
+
+
+}
+
+.cancel-button {
+    display: block;
+    background-color: #E0DFDE;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.submit-button {
+    background-color: #F5C800;
+}
+
+.error-message {
+    font-size: 14px;
+    font-weight: 300;
+    color: #FD0707;
+    margin-top: 10px;
+}

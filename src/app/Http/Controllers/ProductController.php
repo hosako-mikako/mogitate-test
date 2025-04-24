@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Season;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -17,7 +20,7 @@ class ProductController extends Controller
         $products = Product::query();
 
         if ($query) {
-            $products->where('name', 'like', "%{$query}%")->orWhere('description', 'like', "%{$query}%");
+            $products->where('name', 'LIKE', "%{$query}%");
         }
 
         switch ($sort) {
@@ -32,20 +35,56 @@ class ProductController extends Controller
                 break;
         }
 
-        $products = $products->paginate(6);
+
+        $products = $products->paginate(6)->withQueryString();;
 
         $options = [
             'price_desc' => '価格が高い順',
             'price_asc' => '価格が安い順',
         ];
 
-        return view('products.index', compact('products', 'options'));
+        $isSearch = !empty($query);
+
+
+        return view('products.index', compact('products', 'options', 'query'));
     }
 
-    public function show(Product $product)
+
+    public function show(int $productId)
     {
+        $product = Product::findOrFail($productId);
+
         return view('products.show', compact('product'));
     }
+
+    public function edit(int $productId)
+    {
+        $product = Product::findOrFail($productId);
+
+        dd('確認した');
+        return view('products.edit', compact('product'));
+    }
+
+    public function update(ProductRequest $request, int $productId)
+    {
+    
+
+        $product = Product::findOrFail($productId);
+        $validatedData = $request->validated();
+
+        if ($request->hasFile('image')) {
+            if($product->image) {
+                Storage::delete('public/' . $product->image);
+            }
+            $imagePath = $request->file('image')->store('public/products');
+            $validatedData['image'] = str_replace('public/', '', $imagePath);
+        }
+
+        $product->update($validatedData);
+        return redirect()->route('products.show', $productId);
+    }
+
+
 
     public function search(Request $request)
     {
@@ -61,25 +100,30 @@ class ProductController extends Controller
     {
 
         $validatedData = $request->validated();
-        // 商品を登録
+
+        $product = new Product();
+        $product->name = $validatedData['name'];
+        $product->price = $validatedData['price'];
+        $product->description = $validatedData['description'];
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/products'); 
+            $validatedData['image'] = str_replace('public/', '', $imagePath); 
+        }
+
+
         $product = Product::create($validatedData);
+
+        if ($request->has('seasons')) {
+            $product->seasons()->attach($request->input('seasons'));
+        }
+
         return redirect()->route('products.index');
     }
 
-    public function edit(Product $product)
+    public function destroy($productId)
     {
-        return view('products.edit', compact('product'));
-    }
-
-    public function update(ProductRequest $request, Product $product)
-    {
-        $validatedData = $request->validated();
-        $product->update($validatedData);
-        return redirect()->route('products.show', $product);
-    }
-
-    public function delete(Product $product)
-    {
+        $product = Product::findOrFail($productId);
         $product->delete();
         return redirect()->route('products.index');
     }

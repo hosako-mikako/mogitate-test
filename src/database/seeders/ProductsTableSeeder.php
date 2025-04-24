@@ -18,7 +18,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'キウイ',
             'price' => '800',
             'image' => 'kiwi.png',
-            'description' => 'キウイは甘みと酸味のバランスが絶妙なフルーツです。ビタミンCなどの栄養素も豊富なため、美肌効果や疲労回復効果っも期待できます。もぎたてフルーツのスムージーをお召し上がりください！'
+            'description' => 'キウイは甘みと酸味のバランスが絶妙なフルーツです。ビタミンCなどの栄養素も豊富なため、美肌効果や疲労回復効果も期待できます。もぎたてフルーツのスムージーをお召し上がりください！'
         ];
         DB::table('products')->insert($param);
 

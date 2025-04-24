@@ -20,22 +20,19 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('products')->group(function () {
     // 商品一覧
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
-    // 商品登録フォーム表示
-    Route::get('/create', [ProductController::class, 'create'])->name('products.create');
-    //　商品登録処理
-    Route::post('/', [ProductController::class, 'store'])->name('products.store');
-    // 商品詳細
-    Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
-    // 商品編集フォーム表示
-    Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
-    // 商品の更新処理
-    Route::put('/{product}', [ProductController::class, 'update'])->name('products.update');
-    // 商品の削除処理
-    Route::delete('/{product}', [ProductController::class, 'delete'])->name('products.delete');
-    // 検索処理
+    // 登録画面表示
+    Route::get('/register', [ProductController::class, 'create'])->name('products.create');
+    // 登録処理
+    Route::post('/register', [ProductController::class, 'store'])->name('products.store');
+    // 検索
     Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+    // 商品詳細
+    Route::get('/{productId}', [ProductController::class, 'show'])->name('products.show');
+    // 更新画面表示
+    Route::get('/{productId}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    // 更新処理
+    Route::put('/{productId}/update', [ProductController::class, 'update'])->name('products.update');
+    // 削除
+    Route::post('/{productId}/delete', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
-Route::prefix('seasons')->group(function () {});
-
-Route::prefix('product-seasons')->group(function () {});
