@@ -12,6 +12,10 @@
 9. php artisan migrate
 10. php artisan make:seeder
 11. php artisan db:seed
+12. php artisan vendor:publish --tag=laravel-pagination
+
+## ER図
+https://drive.google.com/file/d/1NMJpYPZrJbrO-hr9e-rJ-F1tcZVbGZlz/view?usp=sharing
 
 ## 使用技術
 - PHP 7.4.9
