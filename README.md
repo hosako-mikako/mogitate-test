@@ -23,5 +23,5 @@ https://drive.google.com/file/d/1NMJpYPZrJbrO-hr9e-rJ-F1tcZVbGZlz/view?usp=shari
 - MySQL 15.1
 
 ## URL
-- 環境開発：http://localhost
+- 環境開発：http://localhost/ptoducts
 - phpMyadmin：http://localhost:8080/
